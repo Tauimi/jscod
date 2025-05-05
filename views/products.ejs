@@ -10,7 +10,7 @@
     <h2><%= title %></h2>
     <ul>
         <% products.forEach(function(product) { %>
-            <li><%= product.name %> - $<%= product.price %></li>
+            <li><%= product.name %> - $<%= product.price %> <br> Manufacturer: <%= product.manufacturer %> <br> Description: <%= product.description %> <br> Specifications: <%= product.specifications %></li>
         <% }) %>
     </ul>
 </body>

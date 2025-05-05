@@ -3,7 +3,7 @@ const { Pool } = require('pg');
 
 // Получаем строку подключения из переменной окружения
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,  // Строка подключения к базе данных
+  connectionString: process.env.DATABASE_URL,  // Строка подключения из переменной окружения
   ssl: {
     rejectUnauthorized: false
   }
