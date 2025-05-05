@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1><%= title %></h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/catalog">Catalog</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="/admin">Admin Panel</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="order-list">
+        <h2>Manage Orders</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>User</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% orders.forEach(function(order) { %>
+                    <tr>
+                        <td><%= order.id %></td>
+                        <td><%= order.user_id %></td>
+                        <td>$<%= order.total %></td>
+                        <td><%= order.status %></td>
+                        <td>
+                            <form action="/admin/update-order/<%= order.id %>" method="post">
+                                <button type="submit">Update Status</button>
+                            </form>
+                            <form action="/admin/delete-order/<%= order.id %>" method="post">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
