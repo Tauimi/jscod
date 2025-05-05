@@ -1,4 +1,3 @@
-
 {
   "name": "store-project",
   "version": "1.0.0",
@@ -7,8 +6,9 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "pg": "^8.7.1",
-    "ejs": "^3.1.6"
+    "pg": "^8.7.1"
   }
 }
